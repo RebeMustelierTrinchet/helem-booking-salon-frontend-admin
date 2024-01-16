@@ -11,6 +11,7 @@ export default function MainNavbar(){
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
              <Nav.Link href="/comments">Comentarios</Nav.Link>
+             <Nav.Link href="/appointments">Appointments</Nav.Link>
             {/*<NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             </NavDropdown> */}

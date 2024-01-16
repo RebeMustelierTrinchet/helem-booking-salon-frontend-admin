@@ -9,6 +9,10 @@ import LandingPage from "./pages/landing-page/LandingPage"
 import CommentsPage from "./pages/comments-page/CommentsPage"
 import Layout from "./components/layouts/Layout"
 import CreateCommentPage from "./pages/create-comment-page/CreateCommentPage"
+import AppointmentsPage from "./pages/appointments-page/AppointmentsPage"
+import CreateAppointmentPage from "./pages/create-appointment-page/createAppointmentPage"
+import AppointmentEditPage from "./pages/appointment-edit-page/AppoimentEditPage";
+
 
 const rootElement = document.getElementById("root");
 render(
@@ -18,6 +22,9 @@ render(
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/comments" element={<CommentsPage />} />
         <Route exact path="/create-comment" element={<CreateCommentPage />} />
+        <Route exact path="/appointments" element={<AppointmentsPage />} />
+        <Route exact path="/create-appointment" element={<CreateAppointmentPage />} />
+        <Route exact path="/edit-appointment/:appointmentID" element={<AppointmentEditPage />} />
       </Routes>
       </Layout>
   </Router>,
