@@ -12,11 +12,23 @@ import CreateCommentPage from "./pages/create-comment-page/CreateCommentPage"
 import AppointmentsPage from "./pages/appointments-page/AppointmentsPage"
 import CreateAppointmentPage from "./pages/create-appointment-page/createAppointmentPage"
 import AppointmentEditPage from "./pages/appointment-edit-page/AppoimentEditPage";
+import { Auth0Provider } from '@auth0/auth0-react';
+
+
+const AUTH0Domain = process.env.REACT_APP_AUTH0_DOMAIN
+const AUTH0ID = process.env.REACT_APP_AUTH0_CLIENTID
 
 
 const rootElement = document.getElementById("root");
 render(
   <Router>
+     <Auth0Provider
+      domain={AUTH0Domain}
+      clientId={AUTH0ID}
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
     <Layout>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
@@ -27,6 +39,7 @@ render(
         <Route exact path="/edit-appointment/:appointmentID" element={<AppointmentEditPage />} />
       </Routes>
       </Layout>
+      </Auth0Provider>
   </Router>,
   rootElement
 );
